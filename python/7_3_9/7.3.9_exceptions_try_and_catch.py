@@ -14,6 +14,8 @@ while True:
         answer = int(first_input) / int(second_input)
     except ZeroDivisionError:
         print('Can\'t divide by zero, try again')
+    except ValueError:
+        print('Can\'t do words either, try again')
     else:
         print('Then answer is: ' + str(answer))
         print('Try Again')
