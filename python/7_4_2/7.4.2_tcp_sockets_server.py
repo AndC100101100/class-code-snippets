@@ -25,7 +25,11 @@ while True:
         print('Connection from', client) # we output said information
     else:
         received = conn.recv(1024) # we receive data on conn object, under the recv method, with at most 1024 bytes, when we do receive data we set it in this var
-        print(received)
+        received_message = received.decode('utf-8') # formatting string
+        print("[RECEIVED]: "+ received_message)
+        conn.send(str.encode("You said: " + received_message )) # we encode this as bytes when sending it back
+
+
 
 
 sock.close()
